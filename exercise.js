@@ -18,7 +18,7 @@ const flatten = (arr) => {
         for (let i = 0; i < arr.length; i++) {
             if (Array.isArray(arr[i])) {
                 // When current element is an array, 
-                // Call again flatten() to do the task and then add the result to the flat array
+                // Call again flatten() on the element and then add the result to the flat array
                 flatArr = flatArr.concat(flatten(arr[i]));
             } else {
                  // otherwise, when current element ISN'T an array, just add the element directly 
