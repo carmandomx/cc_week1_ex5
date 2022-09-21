@@ -16,6 +16,7 @@ const flatten = (arr) => {
 
         // Loop through all the elements in the given array
         for (let i = 0; i < arr.length; i++) {
+            // Verify the value of the current element
             if (Array.isArray(arr[i])) {
                 // When current element is an array, 
                 // Call again flatten() on the element and then add the result to the flat array
