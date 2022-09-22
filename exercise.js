@@ -24,9 +24,9 @@ const flatten = (arr) => {
     return flat
 }
 
-console.log(flatten([['foo', 'bar'], ['baz', 'qux']]))
+
 console.log(flatten([[1], [2], 3, 4, [5]]))
-console.log(flatten([false, [true, [false]], [true]]))
+
 console.log(flatten([]))
 
 /* Only make changes below this comment */
