@@ -11,9 +11,18 @@
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const flatten = (arr) => {
     /* Only make changes below this comment */
-    
+const result= [];
+arr.forEach((item) => {
+    if(Array.isArray(item)){
+     result.push(...(item));
+    } else {
+    result.push(item);
+    }
+});
+return result;
+
     /* Only make changes below this comment */
-}
+
 
 
 
