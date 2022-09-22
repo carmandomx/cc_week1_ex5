@@ -22,10 +22,10 @@ const flatten = (arr) => {
     but it will be positioned on reverse so it need be fixt */
     while (notFlatten.length) {
 
-        //
+        // Variable where will save the last element from an array if is the case of it
         let lastElement; 
         
-        /* The ".pop()" method removes the last element from an array and returns that elemen */
+        /* The ".pop()" method removes the last element from an array and returns that element */
         lastElement = notFlatten.pop();
 
         /* The "Array.isArray()" method returns true if an object is an array, otherwise false. 
@@ -37,7 +37,9 @@ const flatten = (arr) => {
             notFlatten.push(...lastElement); // Spreat elements in "lastElement" array and then push them
         } 
         
-        // Here is where saves the elements to "flat" variable which will be the result array
+        /* Here is where saves the elements to "flat" variable which will be the result array
+        once the array "notFlattern" hasn't a single array then the conditional will be "false"
+        and will enter to else block */
         else {
             flat.push(lastElement); // Push the "lastElement" to the "flat" variable
         }
