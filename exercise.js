@@ -15,24 +15,21 @@ const flatten = (nested) => {
   //values within the array. The "flat" constant can not be inside the function or it will
   //restart everytime the function its called again.
 
-  const recursion = (arr) => {
     //A iteration its done up to the lenght of the array in order to check all the positions
-    for(var i = 0; i < arr.length; i++) {
+    for(let i = 0; i < nested.length; i++) {
 
       //Verify that the object its an array, if yes. The current array will be introduced as argument into
       //the function to check the current one.
-      if (Array.isArray(arr[i])) {
-        recursion(arr[i])
+      if (Array.isArray(nested[i])) {
+        flat.push(...flatten(nested[i]));
       }
 
       //If the object that is being checked in the moment is not array, the value will be stored in "flat"
       else{
-        flat.push(arr[i]);
+        flat.push(nested[i]);
       }
     }
-  }
-
-  recursion(nested)
+  
   return flat;
 }
 
