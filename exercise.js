@@ -11,12 +11,12 @@
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const flatten = (arr) => {
     let flat = []
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) { //each element
         const cur = arr[i]
-        if (!Array.isArray(cur)) {   //check//
+        if (!Array.isArray(cur)) {   //to find//
             flat.push(cur)
         } else {
-            for (let j = 0; j < cur.length; j++) { //confirm//
+            for (let j = 0; j < cur.length; j++) { //convert//
                 flat.push(cur[j])
             }
         }
