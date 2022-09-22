@@ -36,20 +36,15 @@ const flatten = (arr) => {
 
 //Recursive function that checks the if the array has arrays and does the same pushing the final depth values
 const arrayDepth = (arr, depthtemp) => {
-    if(Array.isArray(arr)){
-        for(let j = 0; j < arr.length; j++){
-            if(Array.isArray(arr[j])){
-                return arrayDepth(arr[j][0], depthtemp);
-            }else{
-                depthtemp.push(arr[j]);
-            }            
-        }
-    }else{
-        depthtemp.push(arr);
+    for(let j = 0; j < arr.length; j++){
+        if(Array.isArray(arr[j])){
+            arrayDepth(arr[j], depthtemp);
+        }else{
+            depthtemp.push(arr[j]);
+        }            
     }
     return depthtemp;
 }
-
 
 /** DO NOT CHANGE THE LINE BELOW **/
 module.exports.flatten = flatten;
