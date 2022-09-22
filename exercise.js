@@ -17,20 +17,20 @@ var arr = [
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const flatten = (arr) =>{
     /* Only make changes below this comment */
-   NewArray = arr.reduce((a, b) =>{
-    if (Array.isArray(b)){
-            a = a.concat(flatten(b));
+   NewArray = arr.reduce((Pvalue, Cvalue) =>{
+    if (Array.isArray(Cvalue)){
+        Pvalue = Pvalue.concat(flatten(Cvalue));
     }
-    else {a.push(b);
+    else {Pvalue.push(Cvalue);
    }
-    return a;
+    return Pvalue;
     }, [])
       // flattened is [0, 1, 2, 3, 4, 5]
     /* Only make changes below this comment */
     return NewArray
 }
 
-
+console.log(flatten(arr))
 
 
 
