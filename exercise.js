@@ -10,12 +10,26 @@
 */
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const flatten = (arr) => {
-    /* Only make changes below this comment */
-    
-    /* Only make changes below this comment */
+    let flat = []
+    for (let i = 0; i < arr.length; i++) {
+        const cur = arr[i]
+        if (!Array.isArray(cur)) {   //check//
+            flat.push(cur)
+        } else {
+            for (let j = 0; j < cur.length; j++) { //confirm//
+                flat.push(cur[j])
+            }
+        }
+    }
+    return flat
 }
 
+console.log(flatten([['foo', 'bar'], ['baz', 'qux']]))
+console.log(flatten([[1], [2], 3, 4, [5]]))
+console.log(flatten([false, [true, [false]], [true]]))
+console.log(flatten([]))
 
+/* Only make changes below this comment */
 
 
 
