@@ -11,6 +11,23 @@
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const flatten = (arr) => {
     /* Only make changes below this comment */
+ 
+        const flat = [];
+        const handleFlat = (array) => {
+          let counter = 0
+          while (counter < array.length) {
+            const val = array[counter];
+            if (Array.isArray(val)) {
+              handleFlat(val);
+            } else {
+              flat.push(val)
+            }
+            counter++;
+          }
+        }
+        handleFlat(arr);
+        return flat;
+      
     
     /* Only make changes below this comment */
 }
