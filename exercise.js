@@ -11,7 +11,9 @@
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const flatten = (arr) => {
     /* Only make changes below this comment */
-    
+    let newArr = [];
+    arr.forEach(x => { Array.isArray(x)? newArr = newArr.concat(flatten(x)) : newArr.push(x)});
+    return newArr
     /* Only make changes below this comment */
 }
 
