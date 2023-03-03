@@ -11,13 +11,13 @@
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const flatten = (arr) => {
     /* Only make changes below this comment */
-    let arr2 = [];
-    for(let i=0;i<arr.length;i++){
-        let item = arr[i];
-        if(Array.isArray(item)==true){
-            arr2 = arr2.concat(flatten(item));
+    let arr2 = []; // we create a new empty array to save the answer
+    for(let i=0;i<arr.length;i++){ // we iterate thorugh the input array
+        let item = arr[i]; //we save each item of the array in the variable item
+        if(Array.isArray(item)==true){ //if one of this items is another array we go into this contidition 
+            arr2 = arr2.concat(flatten(item));//we concatenate items in the answer and use some recursive function if there is another array nested
         }else{
-            arr2.push(item)
+            arr2.push(item) // if not we add items into the answer array
         }
     }
 
